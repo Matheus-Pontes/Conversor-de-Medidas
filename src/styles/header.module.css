@@ -1,0 +1,72 @@
+.Header{
+    width:100vw;
+    background: var(--black);
+    padding:2rem;
+    margin: auto;
+    
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.title{
+    text-align: center;
+    margin: auto;
+    color:var(--white);
+}
+
+.open{
+    border: 1px solid rgb(22, 38, 48);
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.forModal{
+    width: 50px;
+    border: 2px solid var(--white);
+    border-radius: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    
+}
+
+.modal{
+    background: rgba(0,0,0,.3);
+    /* width: 200px; */
+    
+    position: absolute;
+    top: 89px;
+    left: 0;
+
+    -webkit-transition: all ease-in-out 0.3s;
+    transition: all ease-in-out 0.3s;
+    
+}
+
+.temp,.comp,.metr,.home{
+    display:block;
+    text-decoration:none;
+    
+    color:var(--white);
+    
+    padding:10px;
+    border-bottom:2px solid #ccc;
+    
+    transition:all ease-in-out 0.3s;
+}
+
+.temp:hover{
+    border-bottom-color: #04d631;
+    background-color: rgba(0,0,0,.7);
+}
+.comp:hover{
+    border-bottom-color: #0496ff;
+    background-color: rgba(0,0,0,.7);
+}
+.metr:hover{
+    border-bottom-color: #8257E6;
+    background-color: rgba(0,0,0,.7);
+}
+.home:hover{
+    border-bottom-color: #333;
+    background-color: rgba(0,0,0,.7);
+}

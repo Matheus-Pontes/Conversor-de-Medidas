@@ -1,0 +1,89 @@
+.comp {
+    display: flex;
+    justify-content: space-between;
+}
+
+.converting {
+    text-align: center;
+    margin: 50px;
+}
+
+.Input {
+    font-size: 1.5rem;
+    padding: 1.5rem;
+
+    margin: auto;
+    background: transparent;
+
+    border-bottom: 2px solid #76767656;
+
+    color: var(--white);
+
+    transition: all ease-in-out .3s;
+}
+
+.Input:focus {
+    border-color: #0496ff;
+}
+
+.labels {
+    position: relative;
+}
+
+.placeholders {
+    color: var(--white);
+    font-size: 1.5rem;
+    user-select: none;
+
+    position: absolute;
+    top: -50%;
+    /* transform: translateY(-30%); */
+    
+    margin-left: 8px;
+    padding: 0 0.3rem;
+
+    transition: top .2s, font-size .2s, color .2s;
+}
+
+.labels .Input:focus + .placeholders,
+.labels .Input:not(:placeholder-shown) + .placeholders {
+    top: -200%;
+    font-size: 1rem;
+    color: #0496ff;
+} 
+
+.buttons {
+    color: var(--white);
+    background: var(--black);
+
+    padding: 1.5rem;
+
+    border: solid 2px #0496ff;
+    margin: 8px 5px 5px 5px;
+    cursor: pointer;
+}
+
+/* =================== */
+
+.cardResult {
+    margin: auto; 
+}
+
+.tableResult {
+    border-color: var(--azul);
+    box-shadow: 0 0 8px var(--azul);
+}
+
+.tdResult {
+    border-color: var(--azul);
+}
+
+.tdResult:first-child {
+    border: none;
+}
+
+.tdResultDecimal {
+    border-left: 1px solid var(--azul);
+    border-right: 1px solid var(--azul);
+    border-bottom: none;
+}

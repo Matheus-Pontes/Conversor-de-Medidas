@@ -1,0 +1,57 @@
+.container {
+    margin: 0.625rem;
+}
+.convertMetro {
+    font-size: 1.5rem;
+    padding: 1.5rem;
+
+    margin: auto;
+    background: transparent;
+
+    border-bottom: 2px solid #76767656;
+
+    color: var(--white);
+
+    transition: all ease-in-out .3s;
+}
+
+.convertMetro:focus {
+    border-color: var(--roxo);
+}
+
+.labels {
+    position: relative;
+}
+
+.placeholders {
+    color: var(--white);
+    font-size: 1.5rem;
+    user-select: none;
+
+    position: absolute;
+    top: -50%;
+    /* transform: translateY(-30%); */
+    
+    margin-left: 8px;
+    padding: 0 0.3rem;
+
+    transition: top .2s, font-size .2s, color .2s;
+}
+
+.labels .convertMetro:focus + .placeholders,
+.labels .convertMetro:not(:placeholder-shown) + .placeholders {
+    top: -200%;
+    font-size: 1rem;
+    color: var(--roxo);
+} 
+
+.buttons {
+    color: var(--white);
+    background: var(--black);
+
+    padding: 1.5rem;
+
+    border: solid 2px var(--roxo);
+    margin: 8px 5px 5px 5px;
+    cursor: pointer;
+}
