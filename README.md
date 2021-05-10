@@ -1,22 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Measurement Converter
+- TEMPERATURE
+- COMPUTER
+- METRIC
+
+
+This is my first project [Next.js](https://nextjs.org/) 
+
+- For you create project using command:
+    ```bash 
+    create-next-app 'file-name'
+    ```
 
 ## Getting Started
 
-First, run the development server:
+- Copy repository and run this command in your terminal:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    ```
+    - Remember to update these package managers(npm and yarn)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    - Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Operation :rocket:
+- Using compoment:
+    - Where he can ensure that the page doesn’t refresh,
+    when switching to another page. 
+    ```
+    import Link from 'link/next'
+    ```
+    [Component 'Link'](https://nextjs.org/docs/api-reference/next/link)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- In pages :
+    -  Tempature:
+        - Celsius -> Fahrenheit && Kelvin
+        - Fahrenheit -> Celsius && Kelvin
+        - Kelvin -> Celsius && Fahrenheit
+    -  Computer:
+        - Binary && Hexadecimal && Octal -> Decimal
+    
+    -  Metric:
+        - Meters input and convert another metrics(km, hm,  dam, dm, cm and mm)
+    
 
 ## Learn More
 
