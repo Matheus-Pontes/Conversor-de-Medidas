@@ -32,36 +32,26 @@ export default function calculoMetricas() {
                     type="number" 
                     className={styles.convertMetro} 
                     ref={inputValueRef} 
+                    onKeyUp={converter}
                     placeholder=" "/>
                 <p className={styles.placeholders}>Metro[m]</p>
             </label>
 
-            <button 
-                type="button" 
-                className={styles.buttons} 
-                onClick={converter}
-            >Converter</button>
-
-            <table>
-                <tr>
-                    <td>km</td>
-                    <td>hm</td>
-                    <td>dam</td>
-                    <td>m</td>
-                    <td>dm</td>
-                    <td>cm</td>
-                    <td>mm</td>
-                </tr>
-                <tr>
-                    <td>{km.toFixed(2)}</td>
-                    <td>{hm.toFixed(2)}</td>
-                    <td>{dam.toFixed(2)}</td>
-                    <td>{m}</td>
-                    <td>{dm.toFixed(3)}</td>
-                    <td>{cm.toFixed(3)}</td>
-                    <td>{mm.toFixed(3)}</td>
-                </tr>
-            </table>
+            <div className={styles.containerResult}>
+                <p className={styles.result}>Km: {km.toFixed(2)}</p>
+                
+                <p className={styles.result}>Hm: {hm.toFixed(2)}</p>
+                
+                <p className={styles.result}>Dam: {dam.toFixed(2)}</p>
+                
+                <p className={styles.result}>M: {m}</p>
+                
+                <p className={styles.result}>Dm: {dm.toFixed(3)}</p>
+                
+                <p className={styles.result}>Cm: {cm.toFixed(3)}</p>
+                
+                <p className={styles.result}>Mm: {mm.toFixed(3)}</p>
+            </div>
         </div>
     )
 }

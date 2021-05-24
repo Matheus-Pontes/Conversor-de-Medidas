@@ -27,7 +27,6 @@ main{
   align-items: center;
   justify-content: space-between;
 
-  
   height: 74vh;
   margin: auto;
 }
@@ -38,23 +37,6 @@ section {
   justify-content: center;
 }
 
-/* Estilização da tabela */
-table{
-  padding: 2rem;
-  text-align: center;
-  margin: 80px auto;
-  border: 2px solid var(--roxo);
-  background: var(--black);
-  box-shadow:  0 0 8px var(--roxo);
-}
-
-td {
-  border-bottom: 1px solid var(--roxo);
-  color: var(--white);
-  padding: 1.25rem;
-  text-align: center;
-}
-
 footer {
   margin: auto;
 }
@@ -63,20 +45,24 @@ footer {
   html{
     font-size: 93.75%;
   }
-  
 }
 
 @media (max-width: 850px){
   section {
     width: 100%;
-    height: 90%;
-    flex-direction: column;
+    flex-direction: row;
   }
-
 }
 
 @media(max-width: 720px){
   html{
-    font-size: 87.5%;
+    font-size: 85%;
   }
 }
+
+@media (max-width: 450px){
+  section{
+    flex-direction: column;
+  }
+}
+

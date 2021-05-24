@@ -1,7 +1,14 @@
 import styles from '../../styles/cards.module.css';
 import Link from 'next/link';
 
-export function Card(props){
+interface CardsProps {
+    caminho: string;
+    color: string;
+    image: string;
+    text:string;
+}
+
+export function Card(props: CardsProps){
     return(
         <Link href={props.caminho}>
             <a  className={styles.card}>

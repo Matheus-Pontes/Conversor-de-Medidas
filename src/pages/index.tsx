@@ -1,11 +1,14 @@
-import { GetStaticProps } from 'next'
-import React from 'react'
+import React, {} from 'react'
 import { Card } from '../components/Card/Card'
 
 export default function Home() { 
 
   return (
     <>
+      <header>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </header>
+    
       <main>
         {/*Aqui dentro terá os cards*/}
         <section>

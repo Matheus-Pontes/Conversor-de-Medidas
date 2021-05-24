@@ -333,78 +333,49 @@ export default function calculoComputacionais() {
 
     return (
         <div className={styles.comp}>
-            <div>
-                <div className={styles.converting}>
-                    
-                    <label htmlFor="" className={styles.labels}>
-                        <input 
-                            type="text" 
-                            className={styles.Input}
-                            ref={inputBin} 
-                            placeholder=" "/>
-                        <p className={styles.placeholders}>Binário</p>
-                    </label>
+        
+            <div className={styles.converting}>
+                <label htmlFor="" className={styles.labels}>
+                    <input 
+                        type="text" 
+                        className={styles.Input}
+                        ref={inputBin}
+                        onKeyUp={getValue} 
+                        placeholder=" "/>
+                    <p className={styles.placeholders}>Binário</p>
+                </label>
 
-                    <button 
-                        type="button" 
-                        className={styles.buttons}
-                        onClick={getValue}
-                        >Converter</button>
-                </div>
-                <div className={styles.converting}>
-                    
-                    <label htmlFor="" className={styles.labels}>
-                        <input 
-                            type="text" 
-                            className={styles.Input} 
-                            ref={inputHex}
-                            placeholder=" "/>
-                        <p className={styles.placeholders}>Hexadecimal</p>
-                    </label>
-
-                    <button 
-                        type="button" 
-                        className={styles.buttons}
-                        onClick={getValueHexa}
-                        >Converter</button>
-                </div>
-                <div className={styles.converting}>
-                    
-                    <label htmlFor="" className={styles.labels}>
-                        <input 
-                            type="text" 
-                            className={styles.Input} 
-                            ref={inputOct}
-                            placeholder=" "/>
-                        <p className={styles.placeholders}>Octal</p>
-                    </label>
-
-                    <button 
-                        type="button" 
-                        className={styles.buttons}
-                        onClick={getValueOctal}
-                        >Converter</button>
-                </div>
+                <p className={styles.result}>Bin - Decimal: {binary}</p>
             </div>
 
-            <div className={styles.cardResult}>
-               
-            <table className={styles.tableResult}>
-                <tr>
-                    <td className={styles.tdResult}></td>
-                    <td className={styles.tdResult}>Binário</td>
-                    <td className={styles.tdResult}>Hexadecimal</td>
-                    <td className={styles.tdResult}>Octal</td>
-                </tr>
-               
-                <tr>
-                    <td className={styles.tdResultDecimal}>Decimal</td>
-                    <td className={styles.tdResult}>{binary}</td>
-                    <td className={styles.tdResult}>{hexa}</td>
-                    <td className={styles.tdResult}>{octal}</td>
-                </tr>
-            </table>
-               
+            <div className={styles.converting}>
+                
+                <label htmlFor="" className={styles.labels}>
+                    <input 
+                        type="text" 
+                        className={styles.Input} 
+                        ref={inputHex}
+                        onKeyUp={getValueHexa}
+                        placeholder=" "/>
+                    <p className={styles.placeholders}>Hexadecimal</p>
+                </label>
+
+                <p className={styles.result}>Hex - Decimal: {hexa}</p>
+            </div>
+
+            <div className={styles.converting}>
+                
+                <label htmlFor="" className={styles.labels}>
+                    <input 
+                        type="text" 
+                        className={styles.Input} 
+                        ref={inputOct}
+                        onKeyUp={getValueOctal}
+                        placeholder=" "/>
+                    <p className={styles.placeholders}>Octal</p>
+                </label>
+
+                <p className={styles.result}>Octal - Decimal:  {octal}</p>
             </div>
         </div>
     )

@@ -1,29 +1,26 @@
 .comp {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .converting {
     text-align: center;
-    margin: 50px;
+    margin: 25px auto;
 }
 
 .Input {
     font-size: 1.5rem;
     padding: 1.5rem;
-
     margin: auto;
     background: transparent;
-
     border-bottom: 2px solid #76767656;
-
     color: var(--white);
-
     transition: all ease-in-out .3s;
 }
 
 .Input:focus {
-    border-color: #0496ff;
+    border-color: var(--azul);
 }
 
 .labels {
@@ -37,7 +34,6 @@
 
     position: absolute;
     top: -50%;
-    /* transform: translateY(-30%); */
     
     margin-left: 8px;
     padding: 0 0.3rem;
@@ -49,7 +45,7 @@
 .labels .Input:not(:placeholder-shown) + .placeholders {
     top: -200%;
     font-size: 1rem;
-    color: #0496ff;
+    color: var(--azul);
 } 
 
 .buttons {
@@ -58,32 +54,15 @@
 
     padding: 1.5rem;
 
-    border: solid 2px #0496ff;
+    border: solid 2px var(--azul);
     margin: 8px 5px 5px 5px;
     cursor: pointer;
 }
 
-/* =================== */
-
-.cardResult {
-    margin: auto; 
-}
-
-.tableResult {
-    border-color: var(--azul);
-    box-shadow: 0 0 8px var(--azul);
-}
-
-.tdResult {
-    border-color: var(--azul);
-}
-
-.tdResult:first-child {
-    border: none;
-}
-
-.tdResultDecimal {
-    border-left: 1px solid var(--azul);
-    border-right: 1px solid var(--azul);
-    border-bottom: none;
+.result {
+    color: var(--white);
+    text-align: left;
+    border-bottom: 2px solid var(--azul);
+    padding: 0.25rem;
+    font-size: 1.45rem;
 }

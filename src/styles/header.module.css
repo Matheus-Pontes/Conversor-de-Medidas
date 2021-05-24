@@ -1,4 +1,4 @@
-.Header{
+.Header {
     width:100vw;
     background: var(--black);
     padding:2rem;
@@ -8,7 +8,7 @@
     align-items: center;
     justify-content: space-between;
 }
-.title{
+.title {
     text-align: center;
     margin: auto;
     color:var(--white);
@@ -30,28 +30,31 @@
 }
 
 .modal{
-    background: rgba(0,0,0,.3);
-    /* width: 200px; */
-    
-    position: absolute;
-    top: 89px;
-    left: 0;
+    background: rgba(0,0,0,1);
+    width: 200px;
+    height: 175px;
 
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    top: calc(90px - 10px);
+    left: -100%;
+    
     -webkit-transition: all ease-in-out 0.3s;
     transition: all ease-in-out 0.3s;
     
 }
 
 .temp,.comp,.metr,.home{
-    display:block;
     text-decoration:none;
-    
+    display: block;
     color:var(--white);
     
     padding:10px;
     border-bottom:2px solid #ccc;
     
-    transition:all ease-in-out 0.3s;
+    transition:all ease-in-out 0.2s;
 }
 
 .temp:hover{
@@ -69,4 +72,14 @@
 .home:hover{
     border-bottom-color: #333;
     background-color: rgba(0,0,0,.7);
+}
+
+/* checkbox input */
+.checkbox {
+    display: none;
+}
+
+.checkbox:checked ~ .modal {
+    left: 0;
+    z-index: 1;
 }

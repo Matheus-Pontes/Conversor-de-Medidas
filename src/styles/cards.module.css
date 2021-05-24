@@ -44,27 +44,18 @@
     align-items: center;
 }
 
-@media(max-width: 850px){
-    .card{
-        flex-direction: row;
-        width:100%;  
-        margin: 10px;
-    }
-    .card:nth-child(1) h4{
-        margin-left: 20px;
-    }
 
-    .card:nth-child(3) h4{
-        margin-left: 40px;
+@media screen and (max-width: 450px) {
+    .card {
+        margin: 5px auto;
+        align-items: center;
+        width:20rem;  
     }
-
-    .circle{    
-      width:15%;
-      height:70%;
+    .circle {    
+      width:70%;
+      
     }
-    .imagem{
-        width:30%;
+    .imagem {
+        width:35%;
     }
-
 }
-

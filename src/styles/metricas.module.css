@@ -1,5 +1,6 @@
 .container {
-    margin: 0.625rem;
+    margin: 0.625rem auto;
+    
 }
 .convertMetro {
     font-size: 1.5rem;
@@ -54,4 +55,19 @@
     border: solid 2px var(--roxo);
     margin: 8px 5px 5px 5px;
     cursor: pointer;
+}
+
+.containerResult {
+    text-align: center;
+    margin: 50px auto;
+}
+
+.result {
+    width: 250px;
+    padding: 0.25rem;
+    color: var(--white);
+    border-bottom: 2px solid var(--roxo);
+    font-size: 1.35rem;
+    border-spacing: 5px;
+    margin: auto;
 }
