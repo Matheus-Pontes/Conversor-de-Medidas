@@ -19,8 +19,8 @@ export default function calculoTemperatura(){
     function convertCelsius() {
         let valueInput = Number(inputCelsiusRef.current.value);
 
-        let cFah = (valueInput * 1.8) + 32
-        let cKelvin = valueInput + 273.15
+        let cFah = (valueInput * 9) / 5 + 32;
+        let cKelvin = valueInput + 273.15;
 
         setCelsiusFah(cFah);
         setCelsiusKelvin(cKelvin);
@@ -29,8 +29,8 @@ export default function calculoTemperatura(){
     function convertFah() {
         let valueInput = Number(inputFahRef.current.value);
         
-        let fCelsius = (valueInput - 32) * 0.5
-        let fKelvin = (valueInput-32)*0.5+273.15
+        let fCelsius = ((valueInput - 32) * 5) / 9;
+        let fKelvin = ((valueInput - 32 ) * 5) / 9 + 273.15;
 
         setFahCelsius(fCelsius);
         setFahKelvin(fKelvin);
@@ -40,7 +40,7 @@ export default function calculoTemperatura(){
         let valueInput = Number(inputKelvinRef.current.value);
 
         let kCelsius = valueInput - 273.15;
-        let kFah = (valueInput - 273.15) * 1.8 + 32;
+        let kFah = ((valueInput - 273.15) * 9)/5 + 32;
 
         setKelvinCelsius(kCelsius)
         setKelvinFah(kFah);
