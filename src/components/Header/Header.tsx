@@ -1,4 +1,3 @@
-
 import styles from '../../styles/header.module.css'
 import Link from 'next/link'
 
@@ -15,7 +14,7 @@ export function Header() {
             <section className={styles.modal}>
                 <Link href="/"><a className={styles.home}>Home</a></Link>
                 <Link href="/calcTemperatura/convertTemperatures"><a className={styles.temp}>Temperatura</a></Link>
-                <Link href="/calcComputacionais/calculoComputacionais"><a className={styles.comp}>Computacionais</a></Link>
+                <Link href="/calcComputacionais/convertComputational"><a className={styles.comp}>Computacionais</a></Link>
                 <Link href="/calcMetricas/convertMeters" ><a className={styles.metr}>Métricas</a></Link>
             </section> 
 

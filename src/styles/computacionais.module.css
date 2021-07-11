@@ -48,21 +48,11 @@
     color: var(--azul);
 } 
 
-.buttons {
-    color: var(--white);
-    background: var(--black);
-
-    padding: 1.5rem;
-
-    border: solid 2px var(--azul);
-    margin: 8px 5px 5px 5px;
-    cursor: pointer;
-}
-
 .result {
     color: var(--white);
     text-align: left;
     border-bottom: 2px solid var(--azul);
     padding: 0.25rem;
     font-size: 1.45rem;
+    background: rgba(0,0,0,.8);
 }

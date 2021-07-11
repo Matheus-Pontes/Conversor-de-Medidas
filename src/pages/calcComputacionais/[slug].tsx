@@ -1,19 +1,19 @@
 import { useRef, useState } from 'react'
 import styles from '../../styles/computacionais.module.css'
 
-export default function calculoComputacionais() {
+export default function convertComputational() {
 
-    const inputBin = useRef<HTMLInputElement>(null);
-    const inputHex = useRef<HTMLInputElement>(null);
-    const inputOct = useRef<HTMLInputElement>(null);
+    const inputBinRef = useRef<HTMLInputElement>(null);
+    const inputHexRef = useRef<HTMLInputElement>(null);
+    const inputOctRef = useRef<HTMLInputElement>(null);
 
-    const [binary, setBinaryDecimal] = useState(0);
-    const [hexa, setHexaDecimal] = useState(0)
-    const [octal, setOctalDecimal] = useState(0)
+    const [binaryToDecimal, setBinaryToDecimal] = useState(0);
+    const [hexaToDecimal, setHexaToDecimal] = useState(0)
+    const [octalToDecimal, setOctalToDecimal] = useState(0)
 
-    // funções para o Binário
-    function getValue () {
-        let bin = inputBin.current;
+    
+    function getValueBinary() {
+        let bin = inputBinRef.current;
 
         let arrayDigitado = [];
         let apenasBinario = [];
@@ -32,22 +32,21 @@ export default function calculoComputacionais() {
             }
             else{
                 apenasBinario.push(element);
-                
             }
         })
 
         valida ? invertArray(apenasBinario):console.log("")
     }
-    function invertArray(array){
+    function invertArray(array) {
         let invertBinario = [];
 
         for (var i = (array.length-1); i >= 0; i--){  // invert values in array  
             invertBinario.push(array[i]);
         }
 
-        potencial(invertBinario);
+        potentialValues(invertBinario);
     }
-    function potencial(array){
+    function potentialValues(array) {
         let valuesPotencia = [];
 
         for (var i = (array.length-1); i >= 0; i--){  // ex: [128, 64, 32, ...]
@@ -59,19 +58,18 @@ export default function calculoComputacionais() {
             }
         }
 
-        decimal(valuesPotencia)
+        toDecimal(valuesPotencia)
     }
-    function decimal(array){
+    function toDecimal(array) {
         let decimal = 0;
         array.map(element => {
             decimal += element;
         });
-        setBinaryDecimal(decimal);
+        setBinaryToDecimal(decimal);
     }
 
-    // funções para o Hexadecimal
-    function getValueHexa(){
-        let hex = inputHex.current;
+    function getValueHexa() {
+        let hex = inputHexRef.current;
 
         let arrayDigitado = [];
         let apenasHexa = [];
@@ -82,7 +80,7 @@ export default function calculoComputacionais() {
         }
         console.log(arrayDigitado)
 
-        // validação 
+        
         arrayDigitado.map(element =>{
             switch(element){
 
@@ -140,20 +138,20 @@ export default function calculoComputacionais() {
             }
         })
 
-        valida ? invertArrayHe(apenasHexa):console.log('vazio')
+        valida ? invertArrayHexa(apenasHexa): console.log('vazio')
     }   
-    function invertArrayHe(array){
+    function invertArrayHexa(array) {
         let invertHex = [];
 
-        for (var i = (array.length-1); i >= 0; i--){  // invert values in array  
+        for (var i = (array.length-1); i >= 0; i--){   
             invertHex.push(array[i]);
         }
 
         console.log(invertHex)
         
-        potenciaHex(invertHex)
+        potentialValuesHexa(invertHex)
     }
-    function potenciaHex(array){
+    function potentialValuesHexa(array) {
         let arrayHex = [];
 
         array.map((element, index) => {
@@ -211,19 +209,18 @@ export default function calculoComputacionais() {
                     break
             }
         })
-        decimalHex(arrayHex)
+        hextoDecimal(arrayHex)
     }
-    function decimalHex(array){
+    function hextoDecimal(array){
         let decimal = 0;
         array.map(element => {
             decimal += element;
         });
-        setHexaDecimal(decimal);
+        setHexaToDecimal(decimal);
     }
-
-    // funções para o Octal
-    function getValueOctal(){
-        let octal = inputOct.current;
+     
+    function getValuesOctal(){
+        let octal = inputOctRef.current;
 
         let arrayDigitado = [];
         let apenasOctal = [];
@@ -234,7 +231,7 @@ export default function calculoComputacionais() {
         }
         console.log(arrayDigitado)
 
-        // Validação
+        
         arrayDigitado.map( element =>{
             switch(element){
                 case 0:
@@ -270,18 +267,18 @@ export default function calculoComputacionais() {
             }
         })
 
-        valida ? invertArrayOct(apenasOctal):console.log(apenasOctal);
+        valida ? invertArrayOcta(apenasOctal): console.log(apenasOctal);
     }
-    function invertArrayOct(array){
+    function invertArrayOcta(array){
         let invertOctal = [];
 
         for (var i = (array.length-1); i >= 0; i--){  // invert values in array  
             invertOctal.push(array[i]);
         }
 
-        potenciaOct(invertOctal)        
+        potentialValuesOctal(invertOctal)        
     }
-    function potenciaOct(array){
+    function potentialValuesOctal(array){
         let arrayOctal = [];
 
         array.map((element, index) => {
@@ -318,17 +315,18 @@ export default function calculoComputacionais() {
                     break;
             }
         })
-        console.log(arrayOctal)
-        decimalOctal(arrayOctal);
+        console.log(arrayOctal);
+
+        octToDecimal(arrayOctal);
     }
-    function decimalOctal(array){
+    function octToDecimal(array){
         let decimal = 0;
         array.map(element => {
             decimal += element;
         });
-        console.log(decimal)
-        setOctalDecimal(decimal);
+        console.log(decimal);
 
+        setOctalToDecimal(decimal);
     }
 
     return (
@@ -339,13 +337,13 @@ export default function calculoComputacionais() {
                     <input 
                         type="text" 
                         className={styles.Input}
-                        ref={inputBin}
-                        onKeyUp={getValue} 
+                        ref={inputBinRef}
+                        onKeyUp={getValueBinary} 
                         placeholder=" "/>
                     <p className={styles.placeholders}>Binário</p>
                 </label>
 
-                <p className={styles.result}>Bin - Decimal: {binary}</p>
+                <p className={styles.result}>Bin - Decimal: {binaryToDecimal}</p>
             </div>
 
             <div className={styles.converting}>
@@ -354,13 +352,13 @@ export default function calculoComputacionais() {
                     <input 
                         type="text" 
                         className={styles.Input} 
-                        ref={inputHex}
+                        ref={inputHexRef}
                         onKeyUp={getValueHexa}
                         placeholder=" "/>
                     <p className={styles.placeholders}>Hexadecimal</p>
                 </label>
 
-                <p className={styles.result}>Hex - Decimal: {hexa}</p>
+                <p className={styles.result}>Hex - Decimal: {hexaToDecimal}</p>
             </div>
 
             <div className={styles.converting}>
@@ -369,13 +367,13 @@ export default function calculoComputacionais() {
                     <input 
                         type="text" 
                         className={styles.Input} 
-                        ref={inputOct}
-                        onKeyUp={getValueOctal}
+                        ref={inputOctRef}
+                        onKeyUp={getValuesOctal}
                         placeholder=" "/>
                     <p className={styles.placeholders}>Octal</p>
                 </label>
 
-                <p className={styles.result}>Octal - Decimal:  {octal}</p>
+                <p className={styles.result}>Octal - Decimal: {octalToDecimal}</p>
             </div>
         </div>
     )

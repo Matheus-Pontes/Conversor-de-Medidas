@@ -53,16 +53,17 @@
 } 
 
 .containerResult {
-    text-align: center;
+    text-align: left;
     margin: 50px auto;
 }
 
 .result {
-    width: 250px;
-    padding: 0.25rem;
+    width: 30%;
+    padding: 0.55rem;
     color: var(--white);
     border-bottom: 2px solid var(--roxo);
     font-size: 1.35rem;
     border-spacing: 5px;
     margin: auto;
+    background: rgba(0,0,0,.8);
 }
