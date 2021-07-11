@@ -12,10 +12,9 @@ export function Header() {
                 <p className={styles.forModal} />
             </label>
             
-            
             <section className={styles.modal}>
                 <Link href="/"><a className={styles.home}>Home</a></Link>
-                <Link href="/calcTemperatura/calculoTemperatura"><a className={styles.temp}>Temperatura</a></Link>
+                <Link href="/calcTemperatura/convertTemperatures"><a className={styles.temp}>Temperatura</a></Link>
                 <Link href="/calcComputacionais/calculoComputacionais"><a className={styles.comp}>Computacionais</a></Link>
                 <Link href="/calcMetricas/calculoMetricas" ><a className={styles.metr}>Métricas</a></Link>
             </section>  

@@ -1,49 +1,34 @@
 import { useRef, useState } from 'react';
 import styles from '../../styles/temperatura.module.css'
 
-export default function calculoTemperatura(){
+export default function convertTemperatures(){
 
     const inputCelsiusRef = useRef<HTMLInputElement>(null)
     const inputFahRef = useRef<HTMLInputElement>(null)
     const inputKelvinRef = useRef<HTMLInputElement>(null)
 
-    let [celsiusFah, setCelsiusFah] = useState(0);
-    let [celsiusKelvin, setCelsiusKelvin] = useState(0);
+    let [celsiusToFah, setCelsiusToFah] = useState(0);
+    let [celsiusToKelvin, setCelsiusToKelvin] = useState(0);
     
-    let [fahCelsius, setFahCelsius] = useState(0);
-    let [fahKelvin, setFahKelvin] = useState(0);
+    let [fahToCelsius, setFahToCelsius] = useState(0);
+    let [fahToKelvin, setFahToKelvin] = useState(0);
 
-    let [kelvinCelsius, setKelvinCelsius] = useState(0);
-    let [kelvinFah, setKelvinFah] = useState(0);
+    let [kelvinToCelsius, setKelvinToCelsius] = useState(0);
+    let [kelvinToFah, setKelvinToFah] = useState(0);
     
     function convertCelsius() {
-        let valueInput = Number(inputCelsiusRef.current.value);
-
-        let cFah = (valueInput * 9) / 5 + 32;
-        let cKelvin = valueInput + 273.15;
-
-        setCelsiusFah(cFah);
-        setCelsiusKelvin(cKelvin);
+        setCelsiusToFah((Number(inputCelsiusRef.current.value) * 9) / 5 + 32);
+        setCelsiusToKelvin(Number(inputCelsiusRef.current.value) + 273.15);
     }
     
     function convertFah() {
-        let valueInput = Number(inputFahRef.current.value);
-        
-        let fCelsius = ((valueInput - 32) * 5) / 9;
-        let fKelvin = ((valueInput - 32 ) * 5) / 9 + 273.15;
-
-        setFahCelsius(fCelsius);
-        setFahKelvin(fKelvin);
+        setFahToCelsius(((Number(inputFahRef.current.value) - 32) * 5) / 9);
+        setFahToKelvin(((Number(inputFahRef.current.value) - 32 ) * 5) / 9 + 273.15);
     }
     
     function convertKelvin() {
-        let valueInput = Number(inputKelvinRef.current.value);
-
-        let kCelsius = valueInput - 273.15;
-        let kFah = ((valueInput - 273.15) * 9)/5 + 32;
-
-        setKelvinCelsius(kCelsius)
-        setKelvinFah(kFah);
+        setKelvinToCelsius(Number(inputKelvinRef.current.value) - 273.15)
+        setKelvinToFah(((Number(inputKelvinRef.current.value) - 273.15) * 9)/5 + 32);
     }
 
     return (
@@ -61,8 +46,8 @@ export default function calculoTemperatura(){
                     <p className={styles.placeholders}>Celsius</p>
                 </label>
 
-                <p className={styles.result}>Fahrenhiet: {celsiusFah.toFixed(2)}</p>
-                <p className={styles.result}>Kelvin: {celsiusKelvin.toFixed(2)}</p>
+                <p className={styles.result}>Fahrenhiet: {celsiusToFah.toFixed(2)}</p>
+                <p className={styles.result}>Kelvin: {celsiusToKelvin.toFixed(2)}</p>
 
             </div>
             <div className={styles.converting}>
@@ -77,8 +62,8 @@ export default function calculoTemperatura(){
                     <p className={styles.placeholders}>Fahrenhiet</p>
                 </label>
 
-                <p className={styles.result}>Celsius: {fahCelsius.toFixed(2)}</p>
-                <p className={styles.result}>Kelvin: {fahKelvin.toFixed(2)}</p>
+                <p className={styles.result}>Celsius: {fahToCelsius.toFixed(2)}</p>
+                <p className={styles.result}>Kelvin: {fahToKelvin.toFixed(2)}</p>
             </div>
             <div className={styles.converting}>
                 
@@ -92,8 +77,8 @@ export default function calculoTemperatura(){
                     <p className={styles.placeholders}>Kelvin</p>
                 </label>
 
-                <p className={styles.result}>Celsius: {kelvinCelsius.toFixed(2)}</p>
-                <p className={styles.result}>Fahrenheit: {kelvinFah.toFixed(2)}</p>
+                <p className={styles.result}>Celsius: {kelvinToCelsius.toFixed(2)}</p>
+                <p className={styles.result}>Fahrenheit: {kelvinToFah.toFixed(2)}</p>
             </div>
         </div>
     )
