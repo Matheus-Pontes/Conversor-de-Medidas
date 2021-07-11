@@ -1,56 +1,56 @@
 import { useRef, useState } from 'react'
 import styles from '../../styles/metricas.module.css'
 
-export default function calculoMetricas() {
+export default function convertMeters() {
 
     const inputValueRef = useRef<HTMLInputElement>(null);
 
-    let [km, setKm] = useState(0);
-    let [hm, setHm] = useState(0);
-    let [dam, setDam] = useState(0);
-    let [m, setM] = useState(0);
-    let [dm, setDm] = useState(0);
-    let [cm, setCm] = useState(0);
-    let [mm, setMm] = useState(0);
+    let [metersToKm, setMetersToKm] = useState(0);
+    let [metersToHm, setMetersToHm] = useState(0);
+    let [metersToDam, setMetersToDam] = useState(0);
+    let [meters, setMeters] = useState(0);
+    let [metersToDm, setMetersToDm] = useState(0);
+    let [metersToCm, setMetersToCm] = useState(0);
+    let [metersToMm, setMetersToMm] = useState(0);
 
-    function converter(){
-        let valueInput = Number(inputValueRef.current.value);
-
-        setKm(valueInput*1000)      
-        setHm(valueInput*100)       
-        setDam(valueInput*10)       
-        setM(valueInput);
-        setDm((valueInput/1000))        
-        setCm((valueInput/100))        
-        setMm((valueInput/10))    
+    function handleConvert(){
+        setMetersToKm(Number(inputValueRef.current.value)*1000)      
+        setMetersToHm(Number(inputValueRef.current.value)*100)       
+        setMetersToDam(Number(inputValueRef.current.value)*10)       
+        setMeters(Number(inputValueRef.current.value));
+        setMetersToDm((Number(inputValueRef.current.value)/1000))        
+        setMetersToCm((Number(inputValueRef.current.value)/100))        
+        setMetersToMm((Number(inputValueRef.current.value)/10))    
     }
 
     return (
         <div className={styles.container}>
-            <label htmlFor="" className={styles.labels}>
-                <input 
-                    type="number" 
-                    className={styles.convertMetro} 
-                    ref={inputValueRef} 
-                    onKeyUp={converter}
-                    placeholder=" "/>
-                <p className={styles.placeholders}>Metro[m]</p>
-            </label>
+            <div className={styles.inputCenter}>
+                <label htmlFor="" className={styles.labels}>
+                    <input 
+                        type="number" 
+                        className={styles.convertMetro} 
+                        ref={inputValueRef} 
+                        onKeyUp={handleConvert}
+                        placeholder=" "/>
+                    <p className={styles.placeholders}>Metros [m]</p>
+                </label>
+            </div>
 
             <div className={styles.containerResult}>
-                <p className={styles.result}>Km: {km.toFixed(2)}</p>
+                <p className={styles.result}>Km: {metersToKm.toFixed(2)}</p>
                 
-                <p className={styles.result}>Hm: {hm.toFixed(2)}</p>
+                <p className={styles.result}>Hm: {metersToHm.toFixed(2)}</p>
                 
-                <p className={styles.result}>Dam: {dam.toFixed(2)}</p>
+                <p className={styles.result}>Dam: {metersToDam.toFixed(2)}</p>
                 
-                <p className={styles.result}>M: {m}</p>
+                <p className={styles.result}>M: {meters}</p>
                 
-                <p className={styles.result}>Dm: {dm.toFixed(3)}</p>
+                <p className={styles.result}>Dm: {metersToDm.toFixed(3)}</p>
                 
-                <p className={styles.result}>Cm: {cm.toFixed(3)}</p>
+                <p className={styles.result}>Cm: {metersToCm.toFixed(3)}</p>
                 
-                <p className={styles.result}>Mm: {mm.toFixed(3)}</p>
+                <p className={styles.result}>Mm: {metersToMm.toFixed(3)}</p>
             </div>
         </div>
     )

@@ -20,6 +20,12 @@
     border-color: var(--roxo);
 }
 
+.inputCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .labels {
     position: relative;
 }
@@ -30,8 +36,8 @@
     user-select: none;
 
     position: absolute;
-    top: -50%;
-    /* transform: translateY(-30%); */
+    top: 30%;
+    transform: translateY(-0%);
     
     margin-left: 8px;
     padding: 0 0.3rem;
@@ -41,21 +47,10 @@
 
 .labels .convertMetro:focus + .placeholders,
 .labels .convertMetro:not(:placeholder-shown) + .placeholders {
-    top: -200%;
+    top: -10%;
     font-size: 1rem;
     color: var(--roxo);
 } 
-
-.buttons {
-    color: var(--white);
-    background: var(--black);
-
-    padding: 1.5rem;
-
-    border: solid 2px var(--roxo);
-    margin: 8px 5px 5px 5px;
-    cursor: pointer;
-}
 
 .containerResult {
     text-align: center;

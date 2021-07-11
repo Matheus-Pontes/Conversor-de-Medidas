@@ -15,7 +15,7 @@ export default function Home() {
 
           <Card text="Computacionais" image="/computer.png" color="#0496ff" caminho="/calcComputacionais/calculoComputacionais"/>
 
-          <Card text="Métricas" image="/régua.png" color="#8257E6" caminho="/calcMetricas/calculoMetricas"/>
+          <Card text="Métricas" image="/régua.png" color="#8257E6" caminho="/calcMetricas/convertMeters"/>
         </section>
       </main>
       

@@ -16,13 +16,12 @@ export function Header() {
                 <Link href="/"><a className={styles.home}>Home</a></Link>
                 <Link href="/calcTemperatura/convertTemperatures"><a className={styles.temp}>Temperatura</a></Link>
                 <Link href="/calcComputacionais/calculoComputacionais"><a className={styles.comp}>Computacionais</a></Link>
-                <Link href="/calcMetricas/calculoMetricas" ><a className={styles.metr}>Métricas</a></Link>
-            </section>  
-            
+                <Link href="/calcMetricas/convertMeters" ><a className={styles.metr}>Métricas</a></Link>
+            </section> 
+
             <section className={styles.title}>
                 <h1>Conversor de Medidas</h1>
-            </section>
-
+            </section> 
         </header>
     )
 }
